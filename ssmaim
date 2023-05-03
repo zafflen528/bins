@@ -1,0 +1,27 @@
+#!/bin/sh
+
+DIR=$HOME/pix/scrots/
+fname=$(date +%s)
+
+case $1 in
+    sel)
+        maim -s $DIR/$fname.png
+        notify-send "screenshot saved to $DIR/$fname.png" -t 1500
+        ;;
+    window)
+        maim -i $(xdotool getactivewindow) $DIR/$fname.png
+        notify-send "screenshot saved to $DIR/$fname.png" -t 1500
+        ;;
+    windowclip)
+        maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+        notify-send "screenshot saved to clipboard" -t 1500
+        ;;
+    selclip)
+        maim -s | xclip -selection clipboard -t image/png
+        notify-send "screenshot saved to clipboard" -t 1500
+        ;;
+    *)
+        maim $DIR/$fname.png
+        notify-send "screenshot saved to $DIR/$fname.png" -t 1500
+        ;;
+esac

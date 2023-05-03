@@ -1,0 +1,2 @@
+#/bin/sh
+rsync -uvrP --delete-after /home/abyan/website/* root@zafflen.xyz:/var/www/zafflen 

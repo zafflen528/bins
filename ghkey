@@ -1,0 +1,5 @@
+#/bin/sh
+
+cat ~/.local/keys/ghtoken | xsel -ib
+
+notify-send "github token copied to clipboard!" -t 2500

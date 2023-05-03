@@ -1,0 +1,21 @@
+#!/bin/sh
+
+selections="poweroff\nreboot\nsuspend\nlmao"
+selected=$(echo -e $selections | dmenu -i -l 5)
+case $selected in
+    poweroff)
+        sudo poweroff
+        ;;
+    reboot)
+        sudo reboot
+        ;;
+    suspend)
+        slock &
+        sudo zzz
+        ;;
+
+    *)
+        notify-send "unknown selection" -t 1500
+        ;;
+esac
+

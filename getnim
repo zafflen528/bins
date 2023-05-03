@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cat ~/.local/shortcutdata/mynim | xsel -ib
+notify-send "NIM Copied to clipboard" -t 1500

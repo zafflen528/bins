@@ -1,0 +1,12 @@
+#/bin/sh
+
+xidlehook --timer 600 slock ""&
+nm-applet &
+pa-applet &
+picom &
+mpd &
+remaps &
+redshift &
+nitrogen --restore &
+
+mons -a &
